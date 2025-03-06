@@ -1,32 +1,155 @@
+/* General Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  header {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 20px;
+    font-family: 'Medula One', sans-serif;
+    background-color: #FFD3FF;
+    color: black;
+    margin: 0 auto;
+    padding: 0 20px;
     text-align: center;
-  }
-  header h1 {
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Center Everything with Flexbox */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
     margin: 0;
-    font-size: 2.5rem;
-  }
-  .about, .projects, .contact {
-    padding: 20px;
-    margin: 20px 0;
-  }
-  h2 {
-    font-size: 2rem;
-    color: #1e3a8a;
-  }
-  footer {
+}
+
+/* Header */
+header {
     text-align: center;
-    padding: 10px;
-    background-color: #1e3a8a;
-    color: white;
-  }
-  
+    padding: 100px 100px;
+}
+
+
+/* Sections */
+.about, .experience {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+
+header h1#lexie-lane {
+    font-size: 97px !important;
+    color: black;
+    font-weight: 400;
+    margin: 0;
+}
+
+header h2#aspiring-software-engineer {
+    font-size: 48px !important;
+    color: black;
+    font-weight: 400;
+    margin: 0;
+}
+
+.icons img {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icons img:hover {
+    transform: scale(1.1);
+}
+
+.icon {
+    width: 80px; /* Adjust the size */
+    height: auto;
+    margin-bottom: 10px; /* Space between the icon and text */
+}
+
+.user {
+    -webkit-text-stroke: 2px black; /* Adds an outline */
+    width: 100px; /* Adjust the size */
+    height: auto;
+    margin: 0px; /* Space between the icon and text */
+}
+
+
+/* CSS for second section
+
+/* Ensure the section takes full width and has background color */
+.intro-section {
+    display: flex; /* Flexbox to align items side by side */
+    justify-content: space-between; /* Space out the items */
+    align-items: center; /* Vertically center them */
+    padding: 50px; /* Adjust padding as needed */
+    width: 100%;
+    margin: 0 auto;
+    background-color: #E1F8FF; /* Background color for the section */
+    border-radius: 10px; /* Optional: Rounded corners for the section */
+    box-sizing: border-box;
+}
+
+.image-container {
+    flex: 1; /* Let the image take up available space */
+    display: flex; /* Center the image inside the container */
+    justify-content: flex-start; /* Align image to the left */
+}
+
+.intro-image {
+    width: 100%; /* Make image responsive */
+    max-width: 400px; /* Set a max width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners for the image */
+}
+
+.text-container {
+    flex: 1; /* Let the text take up available space */
+    padding-left: 20px; /* Add space between the text and image */
+    text-align: right; /* Align text to the right */
+}
+
+.text-container h2 {
+    font-size: 60px; /* Adjust text size */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    font-size: 18px; /* Adjust text size */
+    line-height: 1.5;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #lexie-lane {
+        font-size: 48;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    #aspiring-software-engineer,
+    #rochester-ny,
+    #chicago-trip {
+        font-size: 32px;
+    }
+
+    .about, .experience {
+        max-width: 90%;
+    }
+
+    .icons img {
+        width: 30px;
+    }
+
+    .intro-section {
+        flex-direction: column; /* Stack the image and text on top of each other */
+        text-align: center; /* Center the text */
+    }
+
+    .image-container {
+        margin-bottom: 20px; /* Add spacing between the image and text */
+    }
+}

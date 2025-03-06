@@ -1,13 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Example: Smooth scroll on anchor links
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-      link.addEventListener("click", function (event) {
-        event.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth"
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll(".section");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+            }
         });
-      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => {
+        section.style.opacity = 0;
+        section.style.transform = "translateY(50px)";
+        observer.observe(section);
     });
-  });
-  
+});
