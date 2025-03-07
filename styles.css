@@ -164,7 +164,7 @@ header h3#rochester-ny {
 }
 
 .skills-title {
-    font-size: 60px;
+    font-size: 90px;
     font-family: "Medula One", monospace;
     font-weight: bold;
     margin-bottom: 40px;
@@ -179,6 +179,9 @@ header h3#rochester-ny {
 }
 
 .skill {
+    opacity: 0;
+    transform: translateY(50px); /* Move them down initially */
+    transition: transform 2s ease, opacity 2s ease; /* Smooth transition */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,15 +204,57 @@ header h3#rochester-ny {
     transform: scale(1.5); /* Slightly enlarges on hover */
 }
 
+.skill.visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+
+/* Add staggered transition delays for each skill */
+.skill:nth-child(1) {
+    transition-delay: 0.5s;
+}
+
+.skill:nth-child(2) {
+    transition-delay: 1s;
+}
+
+.skill:nth-child(3) {
+    transition-delay: 1.5s;
+}
+
+.skill:nth-child(4) {
+    transition-delay: 2s;
+}
+
+.skill:nth-child(5) {
+    transition-delay: 2.5s;
+}
+
+.skill:nth-child(6) {
+    transition-delay: 3s;
+}
+
+.skill:nth-child(7) {
+    transition-delay: 3.5s;
+}
+
+.skill:nth-child(8) {
+    transition-delay: 4s;
+}
+
+.skill:nth-child(9) {
+    transition-delay: 4.5s;
+}
 
 /*Timeline*/
 
 .timeline-section {
-    width: 100vw;
-    background-color: #FFE6BF;
-    color: black;
+    width: 100vw; /* Full width of the viewport */
+    background-color: #FFFAD5; /* Background color */
+    color: black; /* Text color */
     text-align: center;
-    padding: 40px 20px;
+    padding: 30px 60px; /* Top/bottom and side padding */
 }
 
 .timeline-title {
@@ -240,7 +285,7 @@ header h3#rochester-ny {
 .timeline-date {
     font-size: 20px;
     font-family: "Courier Prime", monospace;
-    font-weight: 400;
+    font-weight: bold;
     min-width: 150px;
     text-align: right;
     padding-right: 20px;
@@ -281,7 +326,7 @@ header h3#rochester-ny {
     content: "";
     position: absolute;
     width: 4px;
-    background-color: white;
+    background-color: #FFD3FF;
     top: 0;
     bottom: 0;
     left: 75px;
@@ -312,6 +357,124 @@ header h3#rochester-ny {
 .logo:hover {
     transform: scale(1.1); /* Slightly enlarge logo on hover */
 }
+
+
+
+
+/*Gallery section*/
+/* Photo Gallery Section */
+.gallery-section {
+    width: 100vw; /* Full width of the viewport */
+    background-color: #7586AE; /* Background color */
+    color: black; /* Text color */
+    text-align: center;
+    padding: 30px 60px; /* Top/bottom and side padding */
+}
+
+.gallery-title {
+    font-size: 49px;
+    font-family: "Medula One", monospace;
+    color: black;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Gallery Container for Polaroid Style */
+.gallery-container {
+    display: flex; /* Use flexbox for the row layout */
+    justify-content: center; /* Center the items horizontally */
+    gap: 30px; /* Space between each image */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Styling for Each Gallery Item */
+.gallery-item {
+    background-color: white; /* White background for the "Polaroid" effect */
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners for the Polaroid effect */
+    width: 250px; /* Fixed width for the polaroid */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow around each item */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+/* Styling for the Image Inside Each Polaroid */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded edges for the image */
+}
+
+/* Styling for the Description Text */
+.description {
+    font-family: "Courier Prime", monospace;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Hover Effects for Polaroid Items */
+.gallery-item:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 28px;
+    }
+
+    .gallery-item {
+        width: 200px; /* Smaller width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 150px; /* Even smaller width on very small screens */
+    }
+}
+
+
+
+
+/*Animations*/
+.typing-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Ensures only part of the text is shown initially */
+}
+
+.typing-text {
+    font-family: "Courier Prime", monospace;
+    font-size: 40px;
+    font-weight: 400;
+    color: black;
+    border-right: 3px solid black; /* Creates the cursor effect */
+    width: 0; /* Starts with no visible text */
+    white-space: nowrap; /* Prevents wrapping */
+    animation: typing 3s steps(28) 1s forwards, blink 0.75s step-end infinite;
+
+}
+
+/* Keyframe for typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Text will expand to its full width */
+    }
+}
+
+/* Keyframe for the cursor blink effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
 
 
 /* Responsive Design */

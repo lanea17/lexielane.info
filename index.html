@@ -17,7 +17,9 @@
         <header>
             <img src="images/user.svg" alt="Icon" class="icon2">
             <h1 id="lexie-lane" >lexie lane</h1>
-            <h2 id="aspiring-software-engineer">aspiring software engineer</h2>
+            <div class="typing-container">
+                <h2 class="typing-text">aspiring software engineer</h2>
+            </div>
             <h3 id="rochester-ny">rochester, ny</h3>
         </header>
 
@@ -31,6 +33,9 @@
             <a href="mailto:lanea17@udayton.edu">
                 <img src="images/Mail.svg" alt="Email" class="icon">
             </a>
+            <a href="https://drive.google.com/file/d/1ZfIPVsMnWOmJrxZ0qz4Mahm9aoqYsf7-/view?usp=sharing">
+                <img src="images/File text.png" alt="Resume" class="icon">
+            </a>
         </div>
         
 
@@ -41,8 +46,8 @@
                 </div>
                 <div class="text-container">
                     <h2>Hi, I'm Alexis (aka, lexie)</h2>
-                    <p>im a senior computer science student at the University of Dayton. at UD i am a member of the Society for Women Engineers, as well as a Student Ambassador for the Department of Computer Science. i am passionate about all things technology, and in my free time enjoy reading, time with family and friends, skiing and being on the lake!<p>
-                </div>
+                    <p>I'm so happy you're here ☻ Im a senior computer science student at the University of Dayton. I graduate in May 2025 and have created this portfolio to showcase both my experience, as well as my web development / software development skills. I am a member of the Society for Women Engineers (SWE), the website technician for Flyer News, I am a student ambassador in the department of computer science, and play intramural soccer. In my free time I love to read, ski, be at the lake, and surround myself with the people I love most!</p>
+                    </div>
             </section>
             
         </section>
@@ -152,9 +157,33 @@
         </section>
         
 
+        <section class="gallery-section">
+            <h2 class="gallery-title">Photo Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="images/catimage2.jpg" alt="Cat Image">
+                    <p class="description">Orientation at CAT during my summer 2024 internship.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/SweConference.jpg" alt="SWE1">
+                    <p class="description">Attending the WE24 Conference with the Society of Women Engineers in Chicago, IL, October 2024.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/SWE2.jpg" alt="SWE2">
+                    <p class="description">WE23 Conference in Los Angeles, CA in October 2023.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ExcellusImage.jpg" alt="Excellus">
+                    <p class="description">National Intern Day in Rochester, NY with Excellus BCBS in 2023.</p>
+                </div>
+            </div>
+        </section>
+
+        
 
 
         <footer>
+            <h2>copyright © lexie lane</h2>
             <div class="icons">
                 <img src="images/Instagram.svg" alt="GitHub">
                 <img src="images/linkedin.svg" alt="LinkedIn">
@@ -165,3 +194,29 @@
 
 </body>
 </html>
+
+<script>
+    // Function to check if an element is in the viewport
+    function isInView(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top >= 0 && rect.top <= window.innerHeight;
+    }
+    
+    // Function to add the "visible" class to each skill when in view
+    function handleScroll() {
+        const skills = document.querySelectorAll('.skill');
+    
+        skills.forEach(skill => {
+            if (isInView(skill)) {
+                skill.classList.add('visible');
+            }
+        });
+    }
+    
+    // Listen for the scroll event and trigger the handleScroll function
+    window.addEventListener('scroll', handleScroll);
+    
+    // Run the function on page load in case the elements are already in view
+    window.addEventListener('load', handleScroll);
+    </script>
+    
