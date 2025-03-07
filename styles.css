@@ -155,7 +155,14 @@ header h3#rochester-ny {
 img {
     width: 100%;
     height: auto;
-  }
+}
+
+
+.profile-photo {
+    width: 200px;
+    height: auto;
+}
+  
   
 
 
