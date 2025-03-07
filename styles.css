@@ -152,6 +152,12 @@ header h3#rochester-ny {
     line-height: 1.5;
 }
 
+img {
+    width: 100%;
+    height: auto;
+  }
+  
+
 
 /* Skills Section */
 
