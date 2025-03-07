@@ -22,28 +22,42 @@ body {
 
 /* Header */
 header {
-    text-align: center;
-    padding: 100px 100px;
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Make it take the full viewport height */
+    text-align: center; /* Center the text */
+    background-color: #FFD3FF; /* Set a background color if needed */
+    box-sizing: border-box;
 }
 
 
 /* Sections */
 .about, .experience {
-    max-width: 800px;
+    max-width: 1700px;
     margin: 50px auto;
     padding: 20px;
 }
 
 
 header h1#lexie-lane {
+    padding: 0px;
     font-size: 97px !important;
     color: black;
-    font-weight: 400;
+    font-weight: bold;
     margin: 0;
 }
 
 header h2#aspiring-software-engineer {
     font-size: 48px !important;
+    color: black;
+    font-weight: 400;
+    margin: 0;
+}
+
+header h3#rochester-ny {
+    font-size: 40px !important;
     color: black;
     font-weight: 400;
     margin: 0;
@@ -73,6 +87,25 @@ header h2#aspiring-software-engineer {
     margin: 0px; /* Space between the icon and text */
 }
 
+.top-right-icons {
+    position: absolute;
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.icon {
+    width: 50px; /* Adjust icon size */
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.5); /* Slightly enlarge on hover */
+    opacity: 0.8; /* Reduce opacity slightly */
+}
+
 
 /* CSS for second section
 
@@ -84,7 +117,7 @@ header h2#aspiring-software-engineer {
     padding: 50px; /* Adjust padding as needed */
     width: 100%;
     margin: 0 auto;
-    background-color: #E1F8FF; /* Background color for the section */
+    background-color: #EDE1FE; /* Background color for the section */
     border-radius: 10px; /* Optional: Rounded corners for the section */
     box-sizing: border-box;
 }
@@ -109,17 +142,176 @@ header h2#aspiring-software-engineer {
 }
 
 .text-container h2 {
-    font-size: 60px; /* Adjust text size */
+    font-size: 70px; /* Adjust text size */
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .text-container p {
-    font-size: 18px; /* Adjust text size */
+    font-size: 30px; /* Adjust text size */
     line-height: 1.5;
 }
 
 
+/* Skills Section */
+
+.skills-section {
+    width: 100vw; /* Full width of the viewport */
+    background-color: #D8EDDB; /* Background color */
+    color: black; /* Text color */
+    text-align: center;
+    padding: 30px 60px; /* Top/bottom and side padding */
+}
+
+.skills-title {
+    font-size: 60px;
+    font-family: "Medula One", monospace;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center icons */
+    gap: 75px; /* Space between items */
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill p {
+    font-size: 24px; /* Make skill names bigger */
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+}
+
+.skill img {
+    width: 70px; /* Adjust icon size */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.skill img:hover {
+    transform: scale(1.5); /* Slightly enlarges on hover */
+}
+
+
+/*Timeline*/
+
+.timeline-section {
+    width: 100vw;
+    background-color: #FFE6BF;
+    color: black;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.timeline-title {
+    font-size: 90px;
+    font-family: "Medula One", monospace;
+    font-weight: bold;
+    margin-bottom: 25px;
+
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-date {
+    font-size: 20px;
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    min-width: 150px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.timeline-content {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.timeline-content:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    opacity: 0.8; /* Reduce opacity slightly */
+}
+
+.timeline-content h3 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/*line*/
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 75px;
+    margin-left: -2px;
+}
+
+
+/*Company Logos*/
+.experience-section {
+    position: relative;
+    padding: 40px;
+}
+
+.company-logos {
+    display: flex;
+    justify-content: space-around; /* Space out logos evenly */
+    align-items: center;
+    margin-top: 50px;
+}
+
+.logo {
+    width: 100px; /* Adjust width of logos */
+    height: auto;
+    margin: 0 15px; /* Space between logos */
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Slightly enlarge logo on hover */
+}
 
 
 /* Responsive Design */
