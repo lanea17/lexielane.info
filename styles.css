@@ -158,9 +158,10 @@ img {
 }
 
 
-.profile-photo {
-    width: 200px;
+.profile-photo  {
+    width: 100%;
     height: auto;
+    border-radius: 8px; /* Rounded edges for the image */
 }
   
   
