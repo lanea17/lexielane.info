@@ -33,6 +33,35 @@ header {
 }
 
 
+/*Date and time*/
+/* Date and time styling */
+.date-time {
+    font-family: "Courier Prime", monospace;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    white-space: nowrap;       /* Prevents wrapping */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .date-time, .top-right-icons {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
 /* Sections */
 .about, .experience {
     max-width: 1700px;
