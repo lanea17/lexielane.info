@@ -136,6 +136,7 @@ header h3#rochester-ny {
 }
 
 .text-container {
+    
     flex: 1; /* Let the text take up available space */
     padding-left: 20px; /* Add space between the text and image */
     text-align: right; /* Align text to the right */
@@ -159,7 +160,7 @@ header h3#rochester-ny {
     border-radius: 8px; /* Rounded edges for the image */
 }
   
-  
+
 
 
 /* Skills Section */
@@ -446,6 +447,143 @@ header h3#rochester-ny {
 }
 
 
+
+
+/* Styling for both sections */
+.countdown-container, .statement-section {
+    text-align: center;
+    width: 100vw; /* Full width of the viewport */
+    flex: 1;
+    padding: 20px 10px;  /* More padding for breathing room */
+    background: #cab5ef;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+
+
+/* Countdown title styling */
+.countdown-container h1 {
+    font-size: 55px;  /* Larger heading */
+    color: black; 
+    text-align: center;
+}
+
+/* Countdown layout */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    white-space: nowrap;  /* Keeps the countdown in a single line */
+    overflow: hidden;      /* Prevents overflow issues */
+}
+
+/* Countdown box styling */
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;       
+    padding: 20px;           
+    border-radius: 12px;   
+    background: black;       
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
+    flex-shrink: 0;          /* Prevents shrinking on small screens */
+}
+
+
+/* Countdown numbers */
+.countdown-box span {
+    font-size: 70px;        /* Larger, bolder numbers */
+    font-weight: bold;
+}
+
+/* Countdown labels */
+.countdown-box small {
+    font-size: 30px;         /* Smaller, uppercase labels */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.statement-section h1 {
+    text-align: center;
+    font-size: 40px;         /* Bold and prominent heading */
+    color: black; 
+    margin-bottom: 15px;
+}
+/* Statement section styling */
+.statement-section h2 {
+    text-align: center;
+    font-size: 75px;         /* Bold and prominent heading */
+    color: black; 
+    margin-bottom: 15px;
+}
+
+.statement-section p {
+    font-family: "Courier Prime", monospace;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.8;
+    color: #2f2c2c;
+    max-width: 1000px;
+    margin: 0 auto;           /* Center-align text block */
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .countdown-box {
+        min-width: 120px;      /* Adjust box size for mid-sized screens */
+        padding: 15px;
+    }
+
+    .countdown-container h1 {
+        font-size: 45px;      /* Slightly smaller heading on mid-sized screens */
+    }
+
+    .statement-section h2 {
+        font-size: 60px;      /* Smaller heading */
+    }
+
+    .statement-section p {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .countdown {
+        flex-wrap: nowrap;    /* Ensures countdown stays in a row */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .countdown-box {
+        min-width: 100px;
+        padding: 10px;
+    }
+
+    .countdown-container h1 {
+        font-size: 35px;      /* Smaller title for mobile */
+    }
+
+    .statement-section h2 {
+        font-size: 45px;
+    }
+
+    .statement-section p {
+        font-size: 24px;
+    }
+}
 
 
 /*Animations*/

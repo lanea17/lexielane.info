@@ -38,7 +38,6 @@
             </a>
         </div>
         
-
         <section class="about">
             <section class="intro-section">
                 <div class="image-container">
@@ -52,8 +51,47 @@
             
         </section>
 
+
+
+        <div class="container">
+            <!-- Countdown Section -->
+            <div class="countdown-container">
+                <h1>there are only</h1>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-box">
+                        <span id="days">00</span>
+                        <small>Days</small>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="hours">00</span>
+                        <small>Hours</small>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+                <h1>until graduation!</h1>
+            </div>
+        
+            <!-- "What is next" Section -->
+            <section class="statement-section">
+                <div class="text-container">
+                    <h2>... so what is next for me?</h2>
+                    <p class="">As graduation approaches in May, I am searching for early career software engineer roles.  
+                    I have focused on front-end development, but also have experience in back-end development as well!  
+                    I am passionate about combining my creativity with my technical skills, and hope to find a place in this industry that lets me showcase both!</p>
+                </div>
+                <h1>feel free to connect with me on LinkedIn, email me, or download my resume from the icons above!</h1>
+            </section>
+        </div>
+
         <section class="skills-section">
-            <h4 class="skills-title">s k i l l s</h4>
+            <h4 class="skills-title">skills</h4>
             <div class="skills-container">
                 <div class="skill">
                     <img src="images/github-svgrepo-com.svg" alt="GitHub">
@@ -221,6 +259,44 @@
             }
         });
     }
+
+
+
+
+
+    //Countdown
+    const graduationDate = new Date('May 11, 2025 00:00:00').getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = graduationDate - now;
+
+        if (timeLeft <= 0) {
+            document.getElementById("countdown").innerHTML = "🎉 Congratulations, you're graduated!";
+            return;
+        }
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days.toString().padStart(2, '0');
+        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    }
+
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+
+    // Initialize countdown on page load
+    updateCountdown();
+
+
+
+
+
     
     // Listen for the scroll event and trigger the handleScroll function
     window.addEventListener('scroll', handleScroll);
