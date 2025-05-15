@@ -138,6 +138,13 @@ header h3#rochester-ny {
     margin: 0;
 }
 
+header h3#rochester-ny-2 {
+    font-size: 30px !important;
+    color: black;
+    font-weight: 400;
+    margin: 0;
+}
+
 .icons img {
     width: 40px;
     height: auto;
