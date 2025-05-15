@@ -569,15 +569,19 @@ header h3#rochester-ny {
 
 /*Animations*/
 .typing-container {
-    position: relative;
-    display: inline-block;
-    overflow: hidden; /* Ensures only part of the text is shown initially */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
 }
 
 .typing-text {
     font-family: "Courier Prime", monospace;
-    font-size: 40px;
+    font-size: 2rem;
     font-weight: 400;
+    white-space: nowrap;
     color: black;
     border-right: 3px solid black; /* Creates the cursor effect */
     width: 0; /* Starts with no visible text */
@@ -710,3 +714,19 @@ header h3#rochester-ny {
     transition: transform 0.3s ease;
   }
   
+
+  /* Tablet screens */
+@media (max-width: 768px) {
+    .typing-text {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Mobile screens */
+  @media (max-width: 480px) {
+    .typing-text {
+      font-size: 1.2rem;
+      white-space: normal; /* Allows wrapping on very small screens */
+      text-align: center;  /* Center the text for mobile */
+    }
+  }
