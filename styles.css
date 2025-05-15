@@ -37,6 +37,47 @@ header {
     box-sizing: border-box;
 }
 
+/* Full-width header bar at the top */
+.main-nav {
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Container for centering content inside header */
+.main-nav ul {
+    font-weight: bold;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style the links */
+.main-nav a {
+    text-decoration: none;
+    color: #222;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.main-nav a:hover {
+    color: #888;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 /*Date and time*/
 /* Date and time styling */
@@ -581,6 +622,21 @@ header h3#rochester-ny {
     font-family: "Courier Prime", monospace;
     font-size: 2rem;
     font-weight: 400;
+    white-space: nowrap;
+    color: black;
+    border-right: 3px solid black; /* Creates the cursor effect */
+    width: 0; /* Starts with no visible text */
+    white-space: nowrap; /* Prevents wrapping */
+    animation: typing 3s steps(28) 1s forwards, blink 0.75s step-end infinite;
+
+}
+
+
+.new-typing-text {
+    font-size: 80px;
+    font-family: "Medula One", monospace;
+    font-weight: bold;
+    margin-bottom: 10px;
     white-space: nowrap;
     color: black;
     border-right: 3px solid black; /* Creates the cursor effect */
